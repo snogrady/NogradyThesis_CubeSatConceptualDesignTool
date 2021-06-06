@@ -1,11 +1,11 @@
 ﻿Variable,Variable Name,Value - Custom,Value - Standard,Value - Advanced,Units
 Use Case,UseCase,,,,-
-Design Option,design_option,Custom,Standard,Advanced,
+Design Option,design_option,Custom,Standard,Advanced,-
 Average Power,P_AVG,,,,W
 Average PDU Power Loss,P_PDU_loss,,,,W
 Power Margin,P_margin,,,,W
 Average Power w/ Margin,P_AVG_margin,,,,W
-Percent Power Margin,per_margin,20,,,%
+Percent Power Margin,per_margin,20,20,20,%
 Mode 1 Name,mode1_name,,,,-
 Mode 2 Name,mode2_name,,,,-
 Mode 3 Name,mode3_name,,,,-
@@ -54,21 +54,21 @@ Thermal Power Mode 2,THER_P2,,,,W
 Thermal Power Mode 3,THER_P3,,,,W
 Thermal Power Mode 4,THER_P4,,,,W
 Thermal Average Power,THER_AVG,,,,W
-Solar Cell Efficiency BOL,SP_eff_bol,0.29,,,%
-Solar Cell Degradation Rate,SP_degrad_rate,2.5,,,%/yr
-Solar Cell Temp Degradation,SP_degrad_temp,0.5,,,%/C
-Solar Cell Temperature,SP_temp,20,,,C
-Solar Tracking,SP_tracking,1,,,-
-Solar Deployable,SP_deployable,1,,,-
-Solar Packing Density,SP_packing,0.8,,,-
-Battery One-way Efficiency,bat_eff,95,,,%
-Battery Cell Mass,cell_mass,0.06,,,kg
-Battery Cell Energy Capacity,cell_cap,11,,,Wh
-Battery Depth-of-Discharge,bat_dod,60,,,%
-PDU Efficiency,PDU_eff,90,,,%
-PDU Mass,PDU_mass,0.1,,,kg
-PDU Data Rate,PDU_data,1.5,,,kb/day
-Solar Flux,solar_flux,1367,,,W/m^2
+Solar Cell Efficiency BOL,SP_eff_bol,28,28,32,%
+Solar Cell Degradation Rate,SP_degrad_rate,2.5,2.5,2.5,%/yr
+Solar Cell Temp Degradation,SP_degrad_temp,0.35,0.35,0.35,%/C
+Solar Cell Temperature,SP_temp,50,50,50,C
+Solar Tracking,SP_tracking,1,1,3,-
+Solar Deployable,SP_deployable,1,1,2,-
+Solar Packing Density,SP_packing,10,10,13,-
+Battery One-way Efficiency,bat_eff,0.047,0.047,0.047,%
+Battery Cell Mass,cell_mass,95,95,95,kg
+Battery Cell Energy Capacity,cell_cap,60,60,60,Wh
+Battery Depth-of-Discharge,bat_dod,0.08,0.08,0.08,%
+PDU Efficiency,PDU_eff,85,85,90,%
+PDU Mass,PDU_mass,,,,kg
+PDU Data Rate,PDU_data,1.5,1.5,1.5,kb/day
+Solar Flux,solar_flux,1367,1367,1367,W/m^2
 Orbit Energy,orbit_energy,,,,Wh
 Max Eclipse Energy,eclipse_energy_max,,,,Wh
 Min Sun Energy,sun_energy_min,,,,Wh
