@@ -16,10 +16,10 @@ class Power:
         # Power Budget Tab:
         self.per_margin = 0
 
-        self.mode1_name = 'Mode 1'
-        self.mode2_name = 'Mode 2'
-        self.mode3_name = 'Mode 3'
-        self.mode4_name = 'Mode 4'
+        self.mode1_name = ''
+        self.mode2_name = ''
+        self.mode3_name = ''
+        self.mode4_name = ''
 
         self.eclipse_mode: int
         self.standby_mode: int

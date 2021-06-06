@@ -132,24 +132,40 @@ class PowerTool:
             pass
         elif p.eclipse_mode == 1:
             p.mode1_duty = (oD.max_eclipse_time/oD.orbital_period)*100
+            if p.mode1_name == 'Mode 1':
+                p.mode1_name = 'Eclipse'
         elif p.eclipse_mode == 2:
             p.mode2_duty = (oD.max_eclipse_time/oD.orbital_period)*100
+            if p.mode2_name == 'Mode 2':
+                p.mode2_name = 'Eclipse'
         elif p.eclipse_mode == 3:
             p.mode3_duty = (oD.max_eclipse_time/oD.orbital_period)*100
+            if p.mode3_name == 'Mode 3':
+                p.mode3_name = 'Eclipse'
         elif p.eclipse_mode == 4:
             p.mode4_duty = (oD.max_eclipse_time/oD.orbital_period)*100
+            if p.mode4_name == 'Mode 4':
+                p.mode4_name = 'Eclipse'
 
         # Standby Mode Seletion (if any)
         if p.standby_mode == 0:
             pass
         elif p.standby_mode == 1:
             p.mode1_duty = 100 - p.mode2_duty - p.mode3_duty - p.mode4_duty
+            if p.mode1_name == 'Mode 1':
+                p.mode1_name = 'Standby'
         elif p.standby_mode == 2:
             p.mode2_duty = 100 - p.mode1_duty - p.mode3_duty - p.mode4_duty
+            if p.mode2_name == 'Mode 2':
+                p.mode2_name = 'Standby'
         elif p.standby_mode == 3:
             p.mode3_duty = 100 - p.mode1_duty - p.mode2_duty - p.mode4_duty
+            if p.mode3_name == 'Mode 3':
+                p.mode3_name = 'Standby'
         elif p.standby_mode == 4:
             p.mode4_duty = 100 - p.mode1_duty - p.mode2_duty - p.mode3_duty
+            if p.mode4_name == 'Mode 4':
+                p.mode4_name = 'Standby'
         
         # Power Budget Calcs
         p.ADCS_AVG = (p.ADCS_P1 * (p.mode1_duty/100)) + (p.ADCS_P2 * (p.mode2_duty/100)) + (p.ADCS_P3 * (p.mode3_duty/100)) + (p.ADCS_P4 * (p.mode4_duty/100))
@@ -497,8 +513,8 @@ class PowerTool:
 
         return p
 
-    def writeData(self, pd):
-        with open('outputParameters.csv', mode='w') as parameters:
+    def writeData(self, pd, CubeSat_Name):
+        with open(CubeSat_Name, mode='w') as parameters:
             paramWriter = csv.writer(parameters, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
             self.dataList = [self.data[1],
                             pd.UseCase,
