@@ -74,19 +74,20 @@ class PowerTool:
                     self.data.append(d)
                     self.units.append(u)
             # Assign Assumptions
-            p.SP_eff_bol = self.data[57]
-            p.SP_degrad_rate = self.data[58]
-            p.SP_degrad_temp = self.data[59]
-            p.SP_temp = self.data[60]
-            p.SP_tracking = self.data[61]
-            p.SP_deployable = self.data[62]
-            p.bat_eff = self.data[63]
-            p.cell_mass = self.data[64]
-            p.cell_cap = self.data[66]
-            p.bat_dod = self.data[67]
-            p.PDU_eff = self.data[68]
-            p.PDU_mass = self.data[69]
-            p.PDU_data = self.data[70] 
+            p.SP_eff_bol = float(self.data[57])
+            p.SP_degrad_rate = float(self.data[58])
+            p.SP_degrad_temp = float(self.data[59])
+            p.SP_temp = float(self.data[60])
+            p.SP_tracking = int(self.data[61])
+            p.SP_deployable = int(self.data[62])
+            p.bat_eff = float(self.data[63])
+            p.cell_mass = float(self.data[64])
+            p.cell_cap = float(self.data[66])
+            p.bat_dod = float(self.data[67])
+            p.PDU_eff = float(self.data[68])
+            p.PDU_mass = float(self.data[69])
+            p.PDU_data = float(self.data[70])
+            p.solar_flux = float(self.data[71]) 
             if p.per_margin == '':
                 p.per_margin = self.data[8]
         elif p.design_option == 'Advanced':
@@ -107,19 +108,20 @@ class PowerTool:
                     self.data.append(d)
                     self.units.append(u)
             # Assign Assumptions
-            p.SP_eff_bol = self.data[57]
-            p.SP_degrad_rate = self.data[58]
-            p.SP_degrad_temp = self.data[59]
-            p.SP_temp = self.data[60]
-            p.SP_tracking = self.data[61]
-            p.SP_deployable = self.data[62]
-            p.bat_eff = self.data[63]
-            p.cell_mass = self.data[64]
-            p.cell_cap = self.data[66]
-            p.bat_dod = self.data[67]
-            p.PDU_eff = self.data[68]
-            p.PDU_mass = self.data[69]
-            p.PDU_data = self.data[70] 
+            p.SP_eff_bol = float(self.data[57])
+            p.SP_degrad_rate = float(self.data[58])
+            p.SP_degrad_temp = float(self.data[59])
+            p.SP_temp = float(self.data[60])
+            p.SP_tracking = int(self.data[61])
+            p.SP_deployable = int(self.data[62])
+            p.bat_eff = float(self.data[63])
+            p.cell_mass = float(self.data[64])
+            p.cell_cap = float(self.data[66])
+            p.bat_dod = float(self.data[67])
+            p.PDU_eff = float(self.data[68])
+            p.PDU_mass = float(self.data[69])
+            p.PDU_data = float(self.data[70])
+            p.solar_flux = float(self.data[71])  
             if p.per_margin == '':
                 p.per_margin = self.data[8]
         else: 
@@ -514,7 +516,11 @@ class PowerTool:
         return p
 
     def writeData(self, pd, CubeSat_Name):
-        with open(CubeSat_Name, mode='w') as parameters:
+        print(CubeSat_Name)
+        if CubeSat_Name == '':
+            CubeSat_Name = 'outputFile'
+        fileName = CubeSat_Name + '.csv'
+        with open(fileName, mode='w',newline='') as parameters:
             paramWriter = csv.writer(parameters, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
             self.dataList = [self.data[1],
                             pd.UseCase,

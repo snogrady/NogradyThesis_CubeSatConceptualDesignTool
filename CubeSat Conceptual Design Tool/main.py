@@ -16,6 +16,10 @@ import GNC_Test as GT
 import CDH_Test as CDHT
 import Stru_Test as ST
 
+# Initialize System Variables
+CubeSat_Size = ''
+CubeSat_Name = ''
+
 def openPower():
     if v0.get() == 1:
         EPS.powerbudget2powerdesign()
@@ -36,7 +40,9 @@ def runDesign():
     pd.writeData(p, CubeSat_Name)
 
 def submitMain():
+    global CubeSat_Name 
     CubeSat_Name = M3_E2.get()
+
 
     
 # def outPutData():

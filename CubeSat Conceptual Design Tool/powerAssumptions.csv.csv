@@ -66,7 +66,7 @@ Battery Cell Mass,cell_mass,95,95,95,kg
 Battery Cell Energy Capacity,cell_cap,60,60,60,Wh
 Battery Depth-of-Discharge,bat_dod,0.08,0.08,0.08,%
 PDU Efficiency,PDU_eff,85,85,90,%
-PDU Mass,PDU_mass,,,,kg
+PDU Mass,PDU_mass,100,100,86,kg
 PDU Data Rate,PDU_data,1.5,1.5,1.5,kb/day
 Solar Flux,solar_flux,1367,1367,1367,W/m^2
 Orbit Energy,orbit_energy,,,,Wh

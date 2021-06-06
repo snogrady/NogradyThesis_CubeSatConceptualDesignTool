@@ -16,10 +16,10 @@ class Power:
         # Power Budget Tab:
         self.per_margin = 0
 
-        self.mode1_name = ''
-        self.mode2_name = ''
-        self.mode3_name = ''
-        self.mode4_name = ''
+        self.mode1_name = 'Mode 1'
+        self.mode2_name = 'Mode 2'
+        self.mode3_name = 'Mode 3'
+        self.mode4_name = 'Mode 4'
 
         self.eclipse_mode: int
         self.standby_mode: int
@@ -423,8 +423,8 @@ class Power:
 
         # Solar Cell Density:
         R = 7; C = 0
-        ttk.Label(self.tabDesign, text='Packing Density').grid(row=R, column=C, padx=25, pady=5,sticky='w')
-        self.E_SP_packing.grid(row=R, column=C+1, padx=5, pady=5,sticky='w')
+        ttk.Label(self.tabDesign, text='Packing Density [%]').grid(row=R, column=C, padx=25, pady=5,sticky='w')
+        self.E_SP_packing.grid(row=R, column=C+1, padx=5, pady=5)
 
         # Solar Tracking
         R = 8; C = 0
@@ -670,19 +670,19 @@ class Power:
             try:
                 self.mode1_name = str(self.E_mode1_name.get())
             except:
-                self.mode1_name = 'Mode 1'
+                pass
             try:
                 self.mode2_name = str(self.E_mode2_name.get())
             except:
-                self.mode2_name = 'Mode 2'
+                pass
             try:
                 self.mode3_name = str(self.E_mode3_name.get())
             except:
-                self.mode3_name = 'Mode 3'
+                pass
             try:
                 self.mode4_name = str(self.E_mode4_name.get())
             except:
-                self.mode4_name = 'Mode 4'
+                pass
 
             try:
                 self.eclipse_mode = self.var_eclipse.get()
